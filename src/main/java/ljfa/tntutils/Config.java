@@ -58,16 +58,16 @@ public class Config {
         dropChanceModifier = (float)conf.get(CAT_GENERAL, "dropChanceIncrease", 0.0, "Modifies the chance that explosions will drop destroyed blocks as items\n"
                 + "-1 = never drop anything, 0 = Vanilla behavior, 1 = always drop items.\n"
                 + "Increasing will only affect explosions of size <= 10 since a large number of dropped items can cause lag.", -1.0, 1.0).getDouble();
-        disableExplosions = conf.get(CAT_GENERAL, "disableExplosions", false, "Entirely disables all effects from explosions").getBoolean();
+        disableExplosions = conf.get(CAT_GENERAL, "disableExplosions", true, "Entirely disables all effects from explosions").getBoolean();
         preventChainExpl = conf.get(CAT_GENERAL, "preventChainExplosions", false, "Prevents explosions from triggering TNT and thus disables chain explosions").getBoolean();
-        disableTNT = conf.get(CAT_GENERAL, "disableTNT", false, "Disables TNT explosions").setRequiresMcRestart(true).getBoolean();
-        disableTNTMinecart = conf.get(CAT_GENERAL, "disableTNTMinecart", false, "Disables the placement of TNT minecarts").setRequiresMcRestart(true).getBoolean();
+        disableTNT = conf.get(CAT_GENERAL, "disableTNT", true, "Disables TNT explosions").setRequiresMcRestart(true).getBoolean();
+        disableTNTMinecart = conf.get(CAT_GENERAL, "disableTNTMinecart", true, "Disables the placement of TNT minecarts").setRequiresMcRestart(true).getBoolean();
         //----------------
         //destructionBlacklist is being read in createBlacklistSet()
         listIsWhitelist = conf.get(CAT_BLOCKDMG, "destructionListIsWhitelist", false, "If false, the list above is a blacklist. If true, it is a whitelist").getBoolean();
-        disableBlockDamage = conf.get(CAT_BLOCKDMG, "disableBlockDamage", false, "Disables all block damage from explosions").getBoolean();
-        disableCreeperBlockDamage = conf.get(CAT_BLOCKDMG, "disableCreeperBlockDamage", false, "\"Environmentally Friendly Creepers\": Makes creepers not destroy blocks").getBoolean();
-        spareTileEntities = conf.get(CAT_BLOCKDMG, "disableTileEntityDamage", false, "Makes explosions not destroy blocks with tile entities").getBoolean();
+        disableBlockDamage = conf.get(CAT_BLOCKDMG, "disableBlockDamage", true, "Disables all block damage from explosions").getBoolean();
+        disableCreeperBlockDamage = conf.get(CAT_BLOCKDMG, "disableCreeperBlockDamage", true, "\"Environmentally Friendly Creepers\": Makes creepers not destroy blocks").getBoolean();
+        spareTileEntities = conf.get(CAT_BLOCKDMG, "disableTileEntityDamage", true, "Makes explosions not destroy blocks with tile entities").getBoolean();
         //----------------
         disableEntityDamage = conf.get(CAT_ENTDMG, "disableEntityDamage", false, "Disables explosion damage to all entities (also includes minecarts, paintings etc.)").getBoolean();
         disablePlayerDamage = conf.get(CAT_ENTDMG, "disablePlayerDamage", false, "Disables explosion damage to players").getBoolean();
